@@ -8,7 +8,7 @@ const devSkills = [
     getAll, 
     getOne,
     create,
-   deleteOne, 
+   deleteOne,
    update
   };
   
@@ -23,8 +23,6 @@ const devSkills = [
   function create(skills) {
     devSkills.push(skills)
   }
-
-
 
   function getAll() {
     return devSkills;

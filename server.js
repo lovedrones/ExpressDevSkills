@@ -25,13 +25,20 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
-
+app.use(function(req, res, next) {
+  console.log(req.method);
+  next();
+})
+app.use(methodOverride('_method')); 
+app.use(function(req, res, next) {
+  console.log(req.method);
+  next();
+})
 app.use('/', indexRouter);
 app.use('/skills', skillsRouter);
 
-app.use(bodyParser.urlencoded());
-app.use(express.static(path.join(__dirname, 'public')));
-app.use(methodOverride('_method'));  // 
+
+ // 
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

@@ -6,16 +6,11 @@ module.exports = {
     new: newSkill,
     create,
     delete: deleteSkill,
-    update
+    update,
   };
   
 
-  function update(req, res) {
-      console.log(req.body);
-      ski11s.update(req.params.id, req.body);
-      res.redirect(`/skills/${req.params.id}`)
-  }
-  
+
   function index(req, res) {
     console.log("hit")
    res.render('skills/index', {
@@ -45,5 +40,11 @@ module.exports = {
  function deleteSkill(req, res) {
     console.log(req.params.id);
      ski11s.deleteOne(req.params.id);
-     res.redirect('/skills/show')
- }
+     res.redirect('/skills')
+ }  
+ 
+ function update(req, res) {
+    console.log(req.body);
+    ski11s.update(req.params.id, req.body);
+    res.redirect(`/skills/${req.params.id}`)
+}
