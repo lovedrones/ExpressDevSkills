@@ -9,22 +9,21 @@
 </head>
 <body>
     <h1><%= title %>  </h1>
+    <h5> as of <%= time %></h5>
     <ul>
         <% sKills.forEach(function(t, idx) { %>
           <li>
-              <form action="/skills/<%= idx %>?_method=DELETE"
-                class="delete-form" method="POST">
-                <button type="submit">X</button>
-              </form>
-            <a href="/skills/<%= idx %>"> <%= t.skills %>   </a>
+          
+            - <a href="/skills/<%= idx %>"> <%= t.skills %>   </a>
             
-              - 
-            <%= t.rating %>
+              
+            - <%= t.level %>
           </li>
         <% }); %>
       </ul> 
-      <a href="/skills/new">Add Skill</a>
-      <h3> as of <%= time %></h3>
+      
+      <a href="/skills/new">Add Skill</a> <a href="/skills/show">Delete/Edit Skills</a>
+     
       
 </body>
 </html>

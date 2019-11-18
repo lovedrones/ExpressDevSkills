@@ -22,8 +22,9 @@ module.exports = {
 
  function show(req, res) {
      res.render('skills/show', {
-     skills: ski11s.getOne(req.params.id),
-     skillNum: parseInt(req.params.id) +1
+      sKills: ski11s.getAll(),
+      title: "My Dev skills",
+      time: req.time
  });
  }
  function newSkill  (req, res) {

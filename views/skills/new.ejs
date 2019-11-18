@@ -11,6 +11,13 @@
         <h1>New Skills</h1>
         <form action="/skills" method="POST" autocomplete="off">
           <input type="text" name="skills">
+          <label>Skill Level:</label>
+          <select name="level">
+            <option value="Beginner">Beginner</option>
+            <option value="Novice">Novice</option>
+            <option value="Expert">Expert</option>
+            
+          </select>
           <button type="submit">Add Skill</button>
         </form>
 </html>

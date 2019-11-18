@@ -16,7 +16,7 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
 app.use(function(req, res, next) {
-  req.time = new Date().toLocaleTimeString();
+  req.time = new Date().toLocaleDateString();
   next();
 });
 

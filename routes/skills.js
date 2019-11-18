@@ -14,20 +14,5 @@ router.delete('/:id', skillsCtrl.delete);
 module.exports = router;
 
 
-/* GET users listing. */
-// router.get('/', function(req, res, next) {
-//   res.send('respond with a resource');
-// });
 
- // existing route above
-
- 
-
-//  router.get('/', function(req, res) {
-//    console.log("hit")
-//   res.render('skills/index', {
-//     sKills: skillsDb.getAll(),
-//     title: "My Dev skills"
-//   })
-// });
 
