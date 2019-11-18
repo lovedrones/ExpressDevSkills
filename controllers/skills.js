@@ -1,16 +1,25 @@
-var skillsDb = require('../models/skill');
+var ski11s = require('../models/skill');
 
 module.exports = {
     index,
     show,
     new: newSkill,
-    create
+    create,
+    delete: deleteSkill,
+    update
   };
+  
+
+  function update(req, res) {
+      console.log(req.body);
+      ski11s.update(req.params.id, req.body);
+      res.redirect(`/skills/${req.params.id}`)
+  }
   
   function index(req, res) {
     console.log("hit")
    res.render('skills/index', {
-     sKills: skillsDb.getAll(),
+     sKills: ski11s.getAll(),
      title: "My Dev skills",
      time: req.time
    })
@@ -18,16 +27,23 @@ module.exports = {
 
  function show(req, res) {
      res.render('skills/show', {
-     sKills: skillsDb.getOne(req.params.id),
+     skills: ski11s.getOne(req.params.id),
      skillNum: parseInt(req.params.id) +1
  });
  }
  function newSkill  (req, res) {
      res.render('skills/new')
  }
+ 
  function create(req, res) {
      console.log(req.body);
-     req.body.done = false;
-    //  skill.create(req.body);
+    //  req.body.rating = ;
+     ski11s.create(req.body);
      res.redirect('/skills')
+ }
+
+ function deleteSkill(req, res) {
+    console.log(req.params.id);
+     ski11s.deleteOne(req.params.id);
+     res.redirect('/skills/show')
  }
