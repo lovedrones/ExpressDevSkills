@@ -15,7 +15,7 @@ module.exports = {
     console.log("hit")
    res.render('skills/index', {
      sKills: ski11s.getAll(),
-     title: "My Dev skills",
+     title: "My Dev Skills",
      time: req.time
    })
  }
@@ -23,7 +23,7 @@ module.exports = {
  function show(req, res) {
      res.render('skills/show', {
       sKills: ski11s.getAll(),
-      title: "My Dev skills",
+      title: "My Dev Skills",
       time: req.time
  });
  }

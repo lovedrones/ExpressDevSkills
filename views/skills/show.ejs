@@ -8,7 +8,10 @@
     <title>Express Dev Skills</title>
 </head>
 <body>
-    <h1> <%= title %>  </h1>
+   
+  <section>
+      <h1> <%= title %>  </h1>
+      <div class="container">
     <h5> as of <%= time %></h5>
     <ul>
         <% sKills.forEach(function(t, idx) { %>
@@ -24,8 +27,9 @@
           </li>
         <% }); %>
       </ul> 
-      
-     
+      <a href="/skills">Previous</a>
+    </div>
+    </section>
       
 </body>
 </html>

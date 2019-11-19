@@ -8,13 +8,15 @@
     <title>Express Dev Skills</title>
 </head>
 <body>
+  <section>
     <h1><%= title %>  </h1>
+    <div class="container">
     <h5> as of <%= time %></h5>
     <ul>
         <% sKills.forEach(function(t, idx) { %>
           <li>
           
-            - <a href="/skills/<%= idx %>"> <%= t.skills %>   </a>
+            <button></button> <a href="/skills/<%= idx %>"> <%= t.skills %>   </a>
             
               
             - <%= t.level %>
@@ -22,8 +24,8 @@
         <% }); %>
       </ul> 
       
-      <a href="/skills/new">Add Skill</a> <a href="/skills/show">Delete/Edit Skills</a>
-     
-      
+      <a href="/skills/new">Add Skill</a> <a href="/skills/show">Delete Skills</a>
+    </div>
+    </section>
 </body>
 </html>
